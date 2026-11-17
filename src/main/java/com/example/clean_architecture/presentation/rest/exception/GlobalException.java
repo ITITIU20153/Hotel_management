@@ -6,12 +6,38 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.example.clean_architecture.domain.enums.DomainErrorCodeEnums;
 import com.example.clean_architecture.domain.exception.DomainException;
+import com.example.clean_architecture.domain.exception.NotBlankException;
+import com.example.clean_architecture.domain.exception.NotNullException;
 import com.example.clean_architecture.infrastructure.persistence.enums.ErrorCodeEnum;
 
 @RestControllerAdvice 
 public class GlobalException {
     @ExceptionHandler(DomainException.class)
     public ResponseEntity<ErrorResponse> handleDomainException(
+            DomainException ex
+    ) {
+        DomainErrorCodeEnums codeEnums = ex.getEnumCode();
+        
+        return ResponseEntity
+                .status(codeEnums.getStatus())
+                .body(toErrorDomainResponse(codeEnums));
+    }
+
+
+    @ExceptionHandler(NotBlankException.class)
+    public ResponseEntity<ErrorResponse> handleNotBlankException(
+            DomainException ex
+    ) {
+        DomainErrorCodeEnums codeEnums = ex.getEnumCode();
+        
+        return ResponseEntity
+                .status(codeEnums.getStatus())
+                .body(toErrorDomainResponse(codeEnums));
+    }
+
+    
+    @ExceptionHandler(NotNullException.class)
+    public ResponseEntity<ErrorResponse> handleNotNullException(
             DomainException ex
     ) {
         DomainErrorCodeEnums codeEnums = ex.getEnumCode();
