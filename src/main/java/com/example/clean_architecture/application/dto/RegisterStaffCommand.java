@@ -1,0 +1,15 @@
+package com.example.clean_architecture.application.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@AllArgsConstructor 
+@NoArgsConstructor 
+@Getter 
+@Setter 
+public class RegisterStaffCommand {
+    private String username;
+    private String password;    
+}
