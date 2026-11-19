@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.clean_architecture.application.dto.RegisterResponseDto;
+import com.example.clean_architecture.application.dto.request.RegisterResponseDto;
 import com.example.clean_architecture.application.port.in.CreateAdminUserUseCase;
 import com.example.clean_architecture.application.port.in.CreateCustomerUserUseCase;
 import com.example.clean_architecture.application.port.in.CreateStaffUserUseCase;

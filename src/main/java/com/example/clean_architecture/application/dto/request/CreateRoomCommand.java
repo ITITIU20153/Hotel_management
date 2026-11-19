@@ -1,4 +1,4 @@
-package com.example.clean_architecture.application.dto;
+package com.example.clean_architecture.application.dto.request;
 
 import com.example.clean_architecture.domain.model.room.RoomNumber;
 import com.example.clean_architecture.domain.model.room.RoomPrice;

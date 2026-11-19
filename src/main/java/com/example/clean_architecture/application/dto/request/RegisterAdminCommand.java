@@ -1,4 +1,4 @@
-package com.example.clean_architecture.application.dto;
+package com.example.clean_architecture.application.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor 
 @Getter 
 @Setter 
-public class RegisterCustomerCommand {
+public class RegisterAdminCommand {
     private String username;
     private String password;    
 }

@@ -3,7 +3,7 @@ package com.example.clean_architecture.presentation.rest.dtos.response;
 import java.math.BigDecimal;
 import java.util.UUID;
 
-import com.example.clean_architecture.application.dto.RoomResponseDto;
+import com.example.clean_architecture.application.dto.response.RoomResponseDto;
 import com.example.clean_architecture.domain.model.room.RoomStatus;
 
 import lombok.AllArgsConstructor;

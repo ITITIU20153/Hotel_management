@@ -1,4 +1,4 @@
-package com.example.clean_architecture.application.dto;
+package com.example.clean_architecture.application.dto.request;
 
 import org.springframework.http.HttpStatus;
 

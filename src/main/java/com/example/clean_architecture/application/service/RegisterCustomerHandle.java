@@ -4,8 +4,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.clean_architecture.application.dto.RegisterCustomerCommand;
-import com.example.clean_architecture.application.dto.RegisterResponseDto;
+import com.example.clean_architecture.application.dto.request.RegisterCustomerCommand;
+import com.example.clean_architecture.application.dto.request.RegisterResponseDto;
 import com.example.clean_architecture.application.port.in.CreateCustomerUserUseCase;
 import com.example.clean_architecture.domain.model.user.Password;
 import com.example.clean_architecture.domain.model.user.User;

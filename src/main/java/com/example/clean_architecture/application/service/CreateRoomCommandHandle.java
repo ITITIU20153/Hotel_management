@@ -3,8 +3,8 @@ package com.example.clean_architecture.application.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.clean_architecture.application.dto.CreateRoomCommand;
-import com.example.clean_architecture.application.dto.RoomResponseDto;
+import com.example.clean_architecture.application.dto.request.CreateRoomCommand;
+import com.example.clean_architecture.application.dto.response.RoomResponseDto;
 import com.example.clean_architecture.application.port.in.CreateRoomUseCase;
 import com.example.clean_architecture.domain.model.room.Room;
 import com.example.clean_architecture.domain.repository.RoomRepository;

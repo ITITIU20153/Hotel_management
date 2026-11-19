@@ -1,6 +1,6 @@
 package com.example.clean_architecture.presentation.rest.dtos.response;
 
-import com.example.clean_architecture.application.dto.RegisterResponseDto;
+import com.example.clean_architecture.application.dto.request.RegisterResponseDto;
 import com.example.clean_architecture.domain.model.user.UserRole;
 
 import lombok.Getter;

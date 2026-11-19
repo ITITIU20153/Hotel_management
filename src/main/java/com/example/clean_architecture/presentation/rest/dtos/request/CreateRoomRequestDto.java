@@ -2,7 +2,7 @@ package com.example.clean_architecture.presentation.rest.dtos.request;
 
 import java.math.BigDecimal;
 
-import com.example.clean_architecture.application.dto.CreateRoomCommand;
+import com.example.clean_architecture.application.dto.request.CreateRoomCommand;
 import com.example.clean_architecture.domain.model.room.RoomNumber;
 import com.example.clean_architecture.domain.model.room.RoomPrice;
 
