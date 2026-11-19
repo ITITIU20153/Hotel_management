@@ -2,7 +2,6 @@ package com.example.clean_architecture.infrastructure.persistence.entity;
 
 import com.example.clean_architecture.domain.model.user.UserRole;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;

@@ -23,21 +23,21 @@ public class Room  {
             this.status = status;
     }
 
-    public void book() {
-        if (this.status == RoomStatus.MAINTENANCE) {
-            throw new DomainException(DomainErrorCodeEnums.ROOM_MAINTAINING);
-        } else if (this.status == RoomStatus.OCCUPIED) {
-            throw new RoomNotAvailableException(DomainErrorCodeEnums.ROOM_MAINTAINING);
-        }
-        this.status = RoomStatus.OCCUPIED;
-    }
+    // public void book() {
+    //     if (this.status == RoomStatus.MAINTENANCE) {
+    //         throw new DomainException(DomainErrorCodeEnums.ROOM_MAINTAINING);
+    //     } else if (this.status == RoomStatus.OCCUPIED) {
+    //         throw new RoomNotAvailableException(DomainErrorCodeEnums.ROOM_MAINTAINING);
+    //     }
+    //     this.status = RoomStatus.OCCUPIED;
+    // }
 
-    public void cancel() {
-        if (this.status == RoomStatus.AVAILABLE) {
-            throw new IllegalArgumentException("Room "+roomNumber+ " is already available. Cannot be canceled");
-        }
-        this.status = RoomStatus.AVAILABLE;
-    }
+    // public void cancel() {
+    //     if (this.status == RoomStatus.AVAILABLE) {
+    //         throw new IllegalArgumentException("Room "+roomNumber+ " is already available. Cannot be canceled");
+    //     }
+    //     this.status = RoomStatus.AVAILABLE;
+    // }
 
     public static Room create( RoomNumber roomNumber, RoomPrice roomPrice) {
         return new Room(RoomId.generate(), roomNumber, roomPrice, RoomStatus.AVAILABLE);
