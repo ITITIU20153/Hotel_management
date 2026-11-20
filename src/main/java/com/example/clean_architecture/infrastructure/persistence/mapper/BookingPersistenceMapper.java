@@ -1,15 +1,13 @@
 package com.example.clean_architecture.infrastructure.persistence.mapper;
 
-import java.math.BigDecimal;
-
 import org.springframework.stereotype.Component;
 
 import com.example.clean_architecture.domain.model.booking.BookingId;
 import com.example.clean_architecture.domain.model.booking.BookingRoom;
 import com.example.clean_architecture.domain.model.booking.CheckInDate;
 import com.example.clean_architecture.domain.model.booking.CheckOutDate;
-import com.example.clean_architecture.domain.model.booking.CustomerId;
-import com.example.clean_architecture.domain.model.booking.RoomId;
+import com.example.clean_architecture.domain.model.room.RoomId;
+import com.example.clean_architecture.domain.model.user.UserId;
 import com.example.clean_architecture.infrastructure.persistence.entity.BookingRoomJpaEntity;
 
 @Component 
@@ -17,21 +15,26 @@ public class BookingPersistenceMapper {
      public BookingRoomJpaEntity toEntity(BookingRoom domain) {
       BookingRoomJpaEntity entity =  new BookingRoomJpaEntity();
       entity.setId(domain.getId().getId());
-      entity.setRooms(domain.getRoomId().id());
-      entity.setUser(domain.getCustomerId().id());
+      entity.setRoomId(domain.getRoomId().value());
+      entity.setUserId(domain.getUserId().getId());
       entity.setStatus(domain.getStatus());
       entity.setCheckInDate(domain.getCheckInDate().createAt());
+      if (domain.getCheckOutDate() != null) {
+          entity.setCheckOutDate(null);
+      } else {
       entity.setCheckOutDate(domain.getCheckOutDate().date());
+
+      }
       return entity;
      }
 
      public BookingRoom toDomain(BookingRoomJpaEntity entity) {
-      return BookingRoom.reconstitute(
-      new BookingId(entity.getId()),
-       new CustomerId(entity.getUser()), 
-       new RoomId(entity.getId(), null), 
-       new CheckInDate(entity.getCheckInDate()), 
-       new CheckOutDate(entity.getCheckOutDate()), 
+     return BookingRoom.reconstitute(
+     new BookingId(entity.getId()),
+     new UserId(entity.getUserId()), 
+     new RoomId(entity.getId()), 
+     new CheckInDate(entity.getCheckInDate()), 
+     new CheckOutDate(entity.getCheckOutDate()), 
       entity.getStatus());
      }
 }

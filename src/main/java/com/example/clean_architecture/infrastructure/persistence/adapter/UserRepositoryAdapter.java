@@ -1,8 +1,11 @@
 package com.example.clean_architecture.infrastructure.persistence.adapter;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Repository;
 
 import com.example.clean_architecture.domain.model.user.User;
+import com.example.clean_architecture.domain.model.user.UserId;
 import com.example.clean_architecture.domain.repository.UserRepository;
 import com.example.clean_architecture.infrastructure.persistence.entity.UserJpaEntity;
 import com.example.clean_architecture.infrastructure.persistence.mapper.UserPersistenceMapper;
@@ -25,5 +28,9 @@ public class UserRepositoryAdapter implements UserRepository {
         return userDomain;
     }
 
-    
+    @Override
+    public Optional<User> findUserById(UserId id) {
+        Optional<UserJpaEntity> userJpaEntity = springDataUserRepository.findById(id.getId());
+        return userJpaEntity.map(mapper::toDomain);
+    }
 }

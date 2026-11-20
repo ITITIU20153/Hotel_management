@@ -8,6 +8,11 @@ public enum ErrorCodeEnum {
         "ROOM_NOT_FOUND",
         "Room not found",
         HttpStatus.NOT_FOUND
+    ),
+    USER_NOT_FOUND(
+        "USER_NOT_FOUND",
+        "User not found",
+        HttpStatus.NOT_FOUND
     );
 
     private final String code;

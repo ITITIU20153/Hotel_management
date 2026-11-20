@@ -1,9 +1,5 @@
 package com.example.clean_architecture.domain.model.room;
 
-import com.example.clean_architecture.domain.enums.DomainErrorCodeEnums;
-import com.example.clean_architecture.domain.exception.DomainException;
-import com.example.clean_architecture.domain.exception.RoomNotAvailableException;
-
 import lombok.Getter;
 
 @Getter 

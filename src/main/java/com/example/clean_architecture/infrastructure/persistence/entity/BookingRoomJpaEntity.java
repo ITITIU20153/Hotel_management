@@ -18,10 +18,10 @@ import lombok.Setter;
 @Table(name = "booking_table")
 public class BookingRoomJpaEntity extends BaseJpaEntity {
     @Column(name = "user_id")
-    private UUID user;
+    private UUID userId;
 
     @Column(name = "room_id")
-    private UUID rooms;
+    private UUID roomId;
 
     private Instant checkInDate;
 
