@@ -1,14 +1,17 @@
 package com.example.clean_architecture.domain.model.booking;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
 import com.example.clean_architecture.domain.model.room.RoomId;
 import com.example.clean_architecture.domain.model.user.UserId;
 
+import lombok.Data;
 import lombok.Getter;
 
 @Getter 
+@Data 
 public class BookingRoom {
     private final BookingId id;
     private UserId userId;
@@ -42,11 +45,11 @@ public class BookingRoom {
         BookingStatus.CHECK_IN);
     }
 
-    public void checkOut(CheckOutDate checkOutDate) {
-        if (this.status != BookingStatus.CHECK_IN) {
+    public void checkOut() {
+        if (status != BookingStatus.CHECK_IN ) {
             throw new IllegalStateException("Only CHECKED_IN booking can check out");
         }
-        this.checkOutDate = checkOutDate;
+        this.checkOutDate = new CheckOutDate(Instant.now());
         this.status = BookingStatus.CHECK_OUT;
     }
 

@@ -71,6 +71,18 @@ public class GlobalException {
                         .body(ex.getMessage());
         }
 
+
+         @ExceptionHandler(IllegalStateException.class) 
+        public ResponseEntity<String> handleIllegalState(
+                IllegalStateException ex) {
+
+                // ErrorCodeEnum errorCode = ex.getErrorCodeEnum();
+                
+                return ResponseEntity
+                        .status(HttpStatus.BAD_REQUEST)
+                        .body(ex.getMessage());
+        }
+        
     private ErrorResponse toErrorDomainResponse(DomainErrorCodeEnums e) {
             ErrorResponse errorResponse = new ErrorResponse();
             errorResponse.setCode(e.getCode());

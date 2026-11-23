@@ -19,12 +19,7 @@ public class BookingPersistenceMapper {
       entity.setUserId(domain.getUserId().getId());
       entity.setStatus(domain.getStatus());
       entity.setCheckInDate(domain.getCheckInDate().createAt());
-      if (domain.getCheckOutDate() != null) {
-          entity.setCheckOutDate(null);
-      } else {
       entity.setCheckOutDate(domain.getCheckOutDate().date());
-
-      }
       return entity;
      }
 
@@ -32,7 +27,7 @@ public class BookingPersistenceMapper {
      return BookingRoom.reconstitute(
      new BookingId(entity.getId()),
      new UserId(entity.getUserId()), 
-     new RoomId(entity.getId()), 
+     new RoomId(entity.getRoomId()), 
      new CheckInDate(entity.getCheckInDate()), 
      new CheckOutDate(entity.getCheckOutDate()), 
       entity.getStatus());

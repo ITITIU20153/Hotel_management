@@ -13,6 +13,11 @@ public enum ErrorCodeEnum {
         "USER_NOT_FOUND",
         "User not found",
         HttpStatus.NOT_FOUND
+    ),
+    BOOKING_NOT_FOUND(
+        "BOOKING_NOT_FOUND",
+        "Booking not found",
+        HttpStatus.NOT_FOUND
     );
 
     private final String code;
